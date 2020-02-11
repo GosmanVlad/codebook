@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /comentator.php
+Disallow: /register.php
+Disallow: /admin.php
+Disallow: /upload.php
+Allow: /
+Disallow: /delete.php
+
+
+#Begin Attracta SEO Tools Sitemap. Do not remove
+sitemap: http://cdn.attracta.com/sitemap/1742986.xml.gz
+#End Attracta SEO Tools Sitemap. Do not remove

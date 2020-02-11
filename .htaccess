@@ -1,0 +1,173 @@
+RewriteOptions inherit
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+
+
+RewriteRule ^memberlist$ memberlist.php [L]
+RewriteRule ^memberlist/$ memberlist.php [L]
+RewriteRule ^memberlist/([0-9]+)$ memberlist.php?pag=$1 [L]
+RewriteRule ^memberlist/([0-9]+)/$ memberlist.php?pag=$1 [L]
+
+RewriteRule ^blog$ blog.php [L]
+RewriteRule ^blog/$ blog.php [L]
+
+RewriteRule ^medalii$ medals.php [L]
+RewriteRule ^medalii/$ medals.php [L]
+
+RewriteRule ^articole$ blog.php [L]
+RewriteRule ^blog/([0-9]+)-([a-zA-Z0-9_-]+)$ blog.php?category=view&id=$1 [L]
+RewriteRule ^blog/([0-9]+)-([a-zA-Z0-9_-]+)/$ blog.php?category=view&id=$1 [L]
+RewriteRule ^blog/delete/([0-9]+)$ blog.php?category=delete&id=$1 [L]
+RewriteRule ^blog/delete/([0-9]+)/$ blog.php?category=delete&id=$1 [L]
+RewriteRule ^blog/edit/([0-9]+)$ blog.php?category=edit&id=$1 [L]
+RewriteRule ^blog/edit/([0-9]+)/$ blog.php?category=edit&id=$1 [L]
+RewriteRule ^blog/commsettings/([0-9]+)/([0-9]+)$ blog.php?category=commsettings&set=$1&id=$2 [L]
+RewriteRule ^blog/commsettings/([0-9]+)/([0-9]+)/$ blog.php?category=commsettings&set=$1&id=$2 [L]
+RewriteRule ^blog/new/$ blog.php?category=new [L]
+RewriteRule ^blog/new$ blog.php?category=new [L]
+
+RewriteRule ^contact$ contact.php [L]
+RewriteRule ^contact/$ contact.php [L]
+
+RewriteRule ^shop$ shop.php [L]
+RewriteRule ^shop/$ shop.php [L]
+
+RewriteRule ^shop/search/([a-zA-Z0-9_-]+)$ shop.php?page=search&item=$1 [L]
+RewriteRule ^shop/search/([a-zA-Z0-9_-]+)/$ shop.php?page=search&item=$1 [L]
+
+RewriteRule ^resurse-informatii$ shop.php?page=informations [L]
+RewriteRule ^resurse-informatii/$ shop.php?page=informations [L]
+
+RewriteRule ^shop/([0-9]+)-([a-zA-Z0-9_-]+)$ shop.php?page=view&id=$1 [L]
+RewriteRule ^shop/([0-9]+)-([a-zA-Z0-9_-]+)/$ shop.php?page=view&id=$1 [L]
+RewriteRule ^shop/([0-9]+)$ shop.php?page=view&id=$1 [L]
+RewriteRule ^shop/([0-9]+)/$ shop.php?page=view&id=$1 [L]
+RewriteRule ^shop/addfav/([0-9]+)$ shop.php?page=addfav&itemid=$1 [L]
+RewriteRule ^shop/addfav/([0-9]+)/$ shop.php?page=addfav&itemid=$1 [L]
+
+RewriteRule ^shop/admin/delete-([0-9]+)$ shop.php?page=edit&id=$1&delete=true [L]
+RewriteRule ^shop/admin/delete-([0-9]+)/$ shop.php?page=edit&id=$1&delete=true [L]
+RewriteRule ^shop/admin/verify-([0-9]+)$ shop.php?page=edit&id=$1&verify=true [L]
+RewriteRule ^shop/admin/verify-([0-9]+)/$ shop.php?page=edit&id=$1&verify=true [L]
+RewriteRule ^shop/admin/promoted-([0-9]+)$ shop.php?page=edit&id=$1&promoted=true [L]
+RewriteRule ^shop/admin/promoted-([0-9]+)/$ shop.php?page=edit&id=$1&promoted=true [L]
+RewriteRule ^shop/admin/normal-([0-9]+)$ shop.php?page=edit&id=$1&normal=true [L]
+RewriteRule ^shop/admin/normal-([0-9]+)/$ shop.php?page=edit&id=$1&normal=true [L]
+RewriteRule ^shop/admin/activate-([0-9]+)$ shop.php?page=edit&id=$1&activated=true [L]
+RewriteRule ^shop/admin/activate-([0-9]+)/$ shop.php?page=edit&id=$1&activated=true [L]
+RewriteRule ^shop/admin/disable-([0-9]+)$ shop.php?page=edit&id=$1&disabled=true [L]
+RewriteRule ^shop/admin/disable-([0-9]+)/$ shop.php?page=edit&id=$1&disabled=true [L]
+
+RewriteRule ^newpm/([a-zA-Z0-9_-]+)$ new_pm.php?sendpm&toname=$1 [L]
+RewriteRule ^newpm/([a-zA-Z0-9_-]+)/$ new_pm.php?sendpm&toname=$1 [L]
+RewriteRule ^newpm$ new_pm.php [L]
+RewriteRule ^newpm/$ new_pm.php [L]
+RewriteRule ^inbox/$ pm.php [L]
+RewriteRule ^inbox$ pm.php [L]
+RewriteRule ^readpm/([0-9]+)$ read_pm.php?page=read&id=$1&read=true [L]
+RewriteRule ^readpm/([0-9]+)$ read_pm.php?page=read&id=$1&read=true [L]
+RewriteRule ^readpm/([0-9]+)-([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ read_pm.php?page=read&reply=$1&title=$2&from=$3 [L]
+RewriteRule ^readpm/([0-9]+)-([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ read_pm.php?page=read&reply=$1&title=$2&from=$3 [L]
+
+RewriteRule ^inbox/remove-([0-9]+)$ pm.php?page=removepm&id=$1&delete=true [L]
+RewriteRule ^inbox/remove-([0-9]+)/$ pm.php?page=removepm&id=$1&delete=true [L]
+
+RewriteRule ^adauga-anunt$ shop.php?page=addshop [L]
+RewriteRule ^adauga-anunt/$ shop.php?page=addshop [L]
+
+RewriteRule ^autentificare$ login.php [L]
+RewriteRule ^autentificare/$ login.php [L]
+
+RewriteRule ^inregistrare$ register.php [L]
+RewriteRule ^inregistrare/$ register.php [L]
+
+RewriteRule ^activare-cont/([0-9]+)/([a-zA-Z0-9_-]+)$ register.php?page=activate&userid=$1&code=$2 [L]
+RewriteRule ^activare-cont/([0-9]+)/([a-zA-Z0-9_-]+)/$ register.php?page=activate&userid=$1&code=$2 [L]
+
+
+RewriteRule ^profile/([0-9]+)-([a-zA-Z0-9_-]+)$ profile.php?page=profile&userid=$1 [L]
+RewriteRule ^profile/([0-9]+)-([a-zA-Z0-9_-]+)/$ profile.php?page=profile&userid=$1 [L]
+
+
+RewriteRule ^profile/$ profile.php?page=profile [L]
+RewriteRule ^profile$ profile.php?page=profile [L]
+
+RewriteRule ^profile/([a-zA-Z0-9_-]+)-([0-9]+)/([0-9]+)$ profile.php?page=$1&userid=$2&active=$3 [L]
+RewriteRule ^profile/([a-zA-Z0-9_-]+)-([0-9]+)/([0-9]+)/$ profile.php?page=$1&userid=$2&active=$3 [L]
+
+RewriteRule ^profile/deletefav-([0-9]+)$ profile.php?page=favorites&deletefav=$1 [L]
+RewriteRule ^profile/deletefav-([0-9]+)/$ profile.php?page=favorites&deletefav=$1 [L]
+
+RewriteRule ^admin$ admin.php [L]
+RewriteRule ^admin/$ admin.php [L]
+RewriteRule ^admin/([a-zA-Z0-9_-]+)$ admin.php?page=$1 [L]
+RewriteRule ^admin/([a-zA-Z0-9_-]+)/$ admin.php?page=$1 [L]
+RewriteRule ^admin/deleteaff/([0-9]+)$ admin.php?page=affiliates&id=$1&delete=true [L]
+RewriteRule ^admin/deleteaff/([0-9]+)/$ admin.php?page=affiliates&id=$1&delete=true [L]
+RewriteRule ^admin/deletecateg/([0-9]+)$ admin.php?page=tutoriale&removeid=$1 [L]
+RewriteRule ^admin/deletecateg/([0-9]+)/$ admin.php?page=tutoriale&removeid=$1 [L]
+RewriteRule ^admin/deletesubcateg/([0-9]+)$ admin.php?page=tutoriale&subcategremove=$1 [L]
+RewriteRule ^admin/deletesubcateg/([0-9]+)/$ admin.php?page=tutoriale&subcategremove=$1 [L]
+RewriteRule ^admin/deletecateg-stuff/([0-9]+)$ admin.php?page=resurse&removeid=$1 [L]
+RewriteRule ^admin/deletecateg-stuff/([0-9]+)/$ admin.php?page=resurse&removeid=$1 [L]
+RewriteRule ^admin/deletemedal/([0-9]+)$ admin.php?page=medals&removeid=$1 [L]
+RewriteRule ^admin/deletemedal/([0-9]+)/$ admin.php?page=medals&removeid=$1 [L]
+
+RewriteRule ^admin/viewmail/([0-9]+)$ admin.php?page=viewmail&id=$1 [L]
+RewriteRule ^admin/viewmail/([0-9]+)/$ admin.php?page=viewmail&id=$1 [L]
+RewriteRule ^admin/deletemail/([0-9]+)$ admin.php?page=viewmail&deleteid=$1 [L]
+RewriteRule ^admin/deletemail/([0-9]+)/$ admin.php?page=viewmail&deleteid=$1 [L]
+RewriteRule ^admin/reply/([0-9]+)/(.*)$ admin.php?page=respondmail&id=$1&mail=$2 [L]
+RewriteRule ^admin/reply/([0-9]+)/(.*)/$ admin.php?page=respondmail&id=$1&mail=$2 [L]
+
+
+RewriteRule ^admin/deleteuser/([0-9]+)$ profile.php?page=profile&userid=$1&delete=true [L]
+RewriteRule ^admin/deleteuser/([0-9]+)/$ profile.php?page=profile&userid=$1&delete=true [L]
+
+RewriteRule ^comm/delete-([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)$ comentator.php?page=delete&rid=$1&sectionid=$2&type=$3&userid=$4&delete=true [L]
+RewriteRule ^comm/delete-([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)/$ comentator.php?page=delete&rid=$1&sectionid=$2&type=$3&userid=$4&delete=true [L]
+
+RewriteRule ^tutoriale$ tutorials.php [L]
+RewriteRule ^tutoriale/$ tutorials.php [L]
+RewriteRule ^tutoriale/([0-9]+)/([a-zA-Z0-9_-]+)$ tutorials.php?category=viewtut&id=$1 [L]
+RewriteRule ^tutoriale/([0-9]+)/([a-zA-Z0-9_-]+)/$ tutorials.php?category=viewtut&id=$1 [L]
+RewriteRule ^tutoriale/admin/delete-([0-9]+)-([0-9]+)$ tutorials.php?category=viewtut&rid=$1&userid=$2&delete=true [L]
+RewriteRule ^tutoriale/admin/delete-([0-9]+)-([0-9]+)/$ tutorials.php?category=viewtut&rid=$1&userid=$2&delete=true [L]
+RewriteRule ^tutoriale/admin/edit-([0-9]+)$ tutorials.php?category=viewtut&editid=$1&edit=true [L]
+RewriteRule ^tutoriale/admin/edit-([0-9]+)/$ tutorials.php?category=viewtut&editid=$1&edit=true [L]
+RewriteRule ^tutoriale/search/([a-zA-Z0-9_-]+)$ tutorials.php?category=search&item=$1 [L]
+RewriteRule ^tutoriale/search/([a-zA-Z0-9_-]+)/$ tutorials.php?category=search&item=$1 [L]
+RewriteRule ^tutoriale/admin/approve-([0-9]+)-([0-9]+)$ tutorials.php?category=viewtut&accid=$1&userid=$2&confirm=true [L]
+RewriteRule ^tutoriale/admin/disable-([0-9]+)-([0-9]+)$ tutorials.php?category=viewtut&disableid=$1&userid=$2&confirm=true [L]
+RewriteRule ^tutoriale/admin/approve-i([0-9]+)$ tutorials.php?category=approve&pendid=$1&readmore=true [L]
+
+RewriteRule ^adauga-un-tutorial$ tutorials.php?category=addtutorials [L]
+RewriteRule ^adauga-un-tutorial/$ tutorials.php?category=addtutorials [L]
+
+RewriteRule ^discutii$ discutii.php [L]
+RewriteRule ^discutii/$ discutii.php [L]
+RewriteRule ^discutii/adauga-post$ discutii.php?category=newpost [L]
+RewriteRule ^discutii/adauga-post$ discutii.php?category=newpost [L]
+RewriteRule ^discutii/([0-9]+)/([a-zA-Z0-9_-]+)$ discutii.php?category=view&id=$1 [L]
+RewriteRule ^discutii/([0-9]+)/([a-zA-Z0-9_-]+)/$ discutii.php?category=view&id=$1 [L]
+
+RewriteRule ^discutii/([0-9]+)/([a-zA-Z0-9_-]+)$ discutii.php?category=view&id=$1 [L]
+RewriteRule ^discutii/([0-9]+)/([a-zA-Z0-9_-]+)/$ discutii.php?category=view&id=$1 [L]
+
+RewriteRule ^discutii/admin/delete-([0-9]+)$ discutii.php?category=view&deleteid=$1 [L]
+RewriteRule ^discutii/admin/delete-([0-9]+)/$ discutii.php?category=view&deleteid=$1 [L]
+
+RewriteRule ^discutii/solved/([0-9]+)$ discutii.php?category=view&solvid=$1&solved=true [L]
+RewriteRule ^discutii/solved/([0-9]+)/$ discutii.php?category=view&solvid=1&solved=true [L]
+RewriteRule ^discutii/unsolved/([0-9]+)$ discutii.php?category=view&unsolvid=$1&unsolved=true [L]
+RewriteRule ^discutii/unsolved/([0-9]+)/$ discutii.php?category=view&unsolvid=1&unsolved=true [L]
+
+RewriteRule ^discutii/edit/([0-9]+)-([a-zA-Z0-9_-]+)$ discutii.php?category=view&editid=$1&postby=$2 [L]
+RewriteRule ^discutii/edit/([0-9]+)-([a-zA-Z0-9_-]+)/$ discutii.php?category=view&editid=$1&postby=$2 [L]
+
+RewriteRule ^recuperare-cont$ recover.php [L]
+RewriteRule ^recuperare-cont/$ recover.php [L]
+RewriteRule ^recuperare-cont/([a-zA-Z0-9_-]+)$ recover.php?page=recover_hash&activationhash=$1 [L]
+RewriteRule ^recuperare-cont/([a-zA-Z0-9_-]+)/$ recover.php?page=recover_hash&activationhash=$1 [L]
