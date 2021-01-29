@@ -1,5 +1,5 @@
 # codebook
-Codebook este vechiul meu site creat cu PHP si Bootstrap, este o platforma pentru micii programatori romani. A fost conceput pentru tutoriale, materiale/resurse, blog-uri + un mini forum.
+Codebook is my old personal website made with PHP and Bootstrap framework. It's a platform for Romanian programmers. It was created for tutorials, materials, resources, blogs + mini-forum.
 
 ![alt text](https://github.com/GosmanVlad/codebook/blob/master/Untitled.png)
 ![alt text](https://github.com/GosmanVlad/codebook/blob/master/Untitled2.png)
